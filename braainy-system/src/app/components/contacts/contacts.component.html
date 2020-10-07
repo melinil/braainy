@@ -7,31 +7,130 @@
   </form>
   <div class="mat-elevation-z8">
     <table mat-table matSort [dataSource]="dataSource" class="contacts-table">
-
-      <!-- Position Column -->
-      <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      <ng-container matColumnDef="accessCode">
+        <th mat-header-cell *matHeaderCellDef> Access Code </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.accessCode}} </td>
       </ng-container>
-
-      <!-- Name Column -->
+      <ng-container matColumnDef="cityId">
+        <th mat-header-cell *matHeaderCellDef> City ID </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.cityId}} </td>
+      </ng-container>
+      <ng-container matColumnDef="cityText">
+        <th mat-header-cell *matHeaderCellDef> City </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.cityText}} </td>
+      </ng-container>
+      <ng-container matColumnDef="contactNo">
+        <th mat-header-cell *matHeaderCellDef> Contact No. </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.contactNo}} </td>
+      </ng-container>
+      <ng-container matColumnDef="countryId">
+        <th mat-header-cell *matHeaderCellDef> Country </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.countryId}} </td>
+      </ng-container>
+      <ng-container matColumnDef="createdTime">
+        <th mat-header-cell *matHeaderCellDef> Created Time </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.createdTime}} </td>
+      </ng-container>
+      <ng-container matColumnDef="currencyId">
+        <th mat-header-cell *matHeaderCellDef> Currency </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.currencyId}} </td>
+      </ng-container>
+      <ng-container matColumnDef="defaultExpenseAccountId">
+        <th mat-header-cell *matHeaderCellDef> Expense Acc. ID </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.defaultExpenseAccountId}} </td>
+      </ng-container>
+      <ng-container matColumnDef="defaultExpenseProductDescription">
+        <th mat-header-cell *matHeaderCellDef> Expense Prod. Desc. </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.defaultExpenseProductDescription}} </td>
+      </ng-container>
+      <ng-container matColumnDef="defaultTaxRateId">
+        <th mat-header-cell *matHeaderCellDef> Tax Rate ID </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.defaultTaxRateId}} </td>
+      </ng-container>
+      <ng-container matColumnDef="ean">
+        <th mat-header-cell *matHeaderCellDef> EAN </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.ean}} </td>
+      </ng-container>
+      <ng-container matColumnDef="emailAttachmentDeliveryMode">
+        <th mat-header-cell *matHeaderCellDef> Email Attachment Delivery Mode </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.emailAttachmentDeliveryMode}} </td>
+      </ng-container>
+      <ng-container matColumnDef="fax">
+        <th mat-header-cell *matHeaderCellDef> Fax </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.fax}} </td>
+      </ng-container>
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="isArchived">
+        <th mat-header-cell *matHeaderCellDef> Archived </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.isArchived}} </td>
+      </ng-container>
+      <ng-container matColumnDef="isCustomer">
+        <th mat-header-cell *matHeaderCellDef> Customer </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.isCustomer}} </td>
+      </ng-container>
+      <ng-container matColumnDef="isSalesTaxExempt">
+        <th mat-header-cell *matHeaderCellDef> Tax Exempt </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.isSalesTaxExempt}} </td>
+      </ng-container>
+      <ng-container matColumnDef="isSupplier">
+        <th mat-header-cell *matHeaderCellDef> Supplier </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.isSupplier}} </td>
+      </ng-container>
+      <ng-container matColumnDef="localeId">
+        <th mat-header-cell *matHeaderCellDef> Locale ID </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.localeId}} </td>
+      </ng-container>
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        <td mat-cell *matCellDef="let contact"> {{contact.name}} </td>
       </ng-container>
-
-      <!-- Weight Column -->
-      <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef> Weight </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      <ng-container matColumnDef="organizationId">
+        <th mat-header-cell *matHeaderCellDef> Org ID </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.organizationId}} </td>
       </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef> Phone </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.phone}} </td>
       </ng-container>
-
+      <ng-container matColumnDef="registrationNo">
+        <th mat-header-cell *matHeaderCellDef> Reg. No. </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.registrationNo}} </td>
+      </ng-container>
+      <ng-container matColumnDef="stateId">
+        <th mat-header-cell *matHeaderCellDef> State ID </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.stateId}} </td>
+      </ng-container>
+      <ng-container matColumnDef="stateText">
+        <th mat-header-cell *matHeaderCellDef> State Text </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.stateText}} </td>
+      </ng-container>
+      <ng-container matColumnDef="street">
+        <th mat-header-cell *matHeaderCellDef> Street </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.street}} </td>
+      </ng-container>
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef> Type </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.type}} </td>
+      </ng-container>
+      <ng-container matColumnDef="zipcodeId">
+        <th mat-header-cell *matHeaderCellDef> Zip ID </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.zipcodeId}} </td>
+      </ng-container>
+      <ng-container matColumnDef="zipcodeText">
+        <th mat-header-cell *matHeaderCellDef> Zip Text </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.zipcodeText}} </td>
+      </ng-container>
+      <ng-container matColumnDef="paymentTermsDays">
+        <th mat-header-cell *matHeaderCellDef> Payment Terms Days </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.paymentTermsDays}} </td>
+      </ng-container>
+      <ng-container matColumnDef="paymentTermsMode">
+        <th mat-header-cell *matHeaderCellDef> Payment Terms Mode </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.paymentTermsMode}} </td>
+      </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
