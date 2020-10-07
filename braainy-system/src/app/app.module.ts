@@ -11,12 +11,14 @@ import {MatTableModule} from '@angular/material/table';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import { ProductsComponent } from './components/products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ContactsComponent
+    ContactsComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
