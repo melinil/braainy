@@ -14,13 +14,18 @@ import {MatSortModule} from '@angular/material/sort';
 import { ProductsComponent } from './components/products/products.component';
 import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
-
+import { CreateProductComponent } from './components/create-product/create-product.component';
+import { CreateContactComponent } from './components/create-contact/create-contact.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ContactsComponent,
-    ProductsComponent
+    ProductsComponent,
+    CreateProductComponent,
+    CreateContactComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatPaginatorModule,
     MatSortModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
