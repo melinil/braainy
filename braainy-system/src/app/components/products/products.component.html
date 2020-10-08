@@ -46,4 +46,5 @@
   </div>
   <button mat-raised-button [disableRipple]="true" color="primary" routerLink="/product-create"
     routerLinkActive="active">Create Product</button>
+    <mat-spinner *ngIf="showSpinner" class="loading-spinner"></mat-spinner>
 </div>

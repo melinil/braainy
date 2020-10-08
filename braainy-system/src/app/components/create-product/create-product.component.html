@@ -33,9 +33,10 @@
                 </mat-form-field>
             </div>
         <div class="button-group">
-            <button mat-raised-button [disableRipple]="true" (click)="onClickMe()" routerLink="/product-list"
+            <button mat-raised-button [disableRipple]="true" routerLink="/product-list"
                 routerLinkActive="active">Cancel</button>
             <button mat-raised-button [disableRipple]="true" color="primary" (click)="createProduct()">Create</button>
         </div>
+        <mat-spinner *ngIf="showSpinner" class="loading-spinner"></mat-spinner>
     </mat-card>
 </div>

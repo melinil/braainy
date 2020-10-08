@@ -3,146 +3,102 @@
         <h1 class="product-create-heading">Create New Contact</h1>
         <div class="upper-row">
             <mat-form-field appearance="fill">
-                <mat-label>Access Code</mat-label>
-                <input matInput>
+                <mat-label>Type (Required)</mat-label>
+                <mat-select [(value)]="type">
+                    <mat-option value="company">Company</mat-option>
+                    <mat-option value="person">Person</mat-option>
+                </mat-select>
             </mat-form-field>
             <mat-form-field appearance="fill">
-                <mat-label>City ID</mat-label>
-                <input matInput>
+                <mat-label>Country(Required)</mat-label>
+                <input matInput [(ngModel)]="countryId">
             </mat-form-field>
             <mat-form-field appearance="fill">
-                <mat-label>City</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Contact No.</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Country</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Expense Acc. ID</mat-label>
-                <input matInput>
+                <mat-label>Name (Required)</mat-label>
+                <input matInput [(ngModel)]="name">
             </mat-form-field>
         </div>
         <div class="upper-row">
             <mat-form-field appearance="fill">
-                <mat-label>Expense Prod. Desc.</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Tax Rate ID</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
                 <mat-label>EAN </mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Email Attachment Delivery Mode</mat-label>
-                <input matInput>
+                <input matInput [(ngModel)]="ean">
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Fax</mat-label>
-                <input matInput>
+                <input matInput [(ngModel)]="fax">
             </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>ID</mat-label>
-                <input matInput>
-            </mat-form-field>
-
-        </div>
-        <div class="upper-row">
             <mat-form-field appearance="fill">
                 <mat-label>Archived</mat-label>
-                <mat-select>
+                <mat-select [(value)]="isArchived">
                     <mat-option value="true">Yes</mat-option>
                     <mat-option value="false">No</mat-option>
                 </mat-select>
             </mat-form-field>
+        </div>
+        <div class="upper-row">
             <mat-form-field appearance="fill">
                 <mat-label>Customer</mat-label>
-                <mat-select>
+                <mat-select [(value)]="isCustomer">
                     <mat-option value="true">Yes</mat-option>
                     <mat-option value="false">No</mat-option>
                 </mat-select>
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Tax Exempt </mat-label>
-                <mat-select>
+                <mat-select [(value)]="isSalesTaxExempt">
                     <mat-option value="true">Yes</mat-option>
                     <mat-option value="false">No</mat-option>
                 </mat-select>
             </mat-form-field>
             <mat-form-field appearance="fill">
-                <mat-label>Supplier</mat-label>
-                <mat-select>
-                    <mat-option value="true">Yes</mat-option>
-                    <mat-option value="false">No</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Locale ID</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Name</mat-label>
-                <input matInput>
+                <mat-label>Contact No.</mat-label>
+                <input matInput [(ngModel)]="contactNo">
             </mat-form-field>
         </div>
         <div class="upper-row">
             <mat-form-field appearance="fill">
-                <mat-label>Org ID</mat-label>
-                <input matInput>
+                <mat-label>Supplier</mat-label>
+                <mat-select [(value)]="isSupplier">
+                    <mat-option value="true">Yes</mat-option>
+                    <mat-option value="false">No</mat-option>
+                </mat-select>
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Phone</mat-label>
-                <input matInput>
+                <input matInput [(ngModel)]="phone">
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Reg. No. </mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>State ID</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>State Text</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Street</mat-label>
-                <input matInput>
+                <input matInput [(ngModel)]="registrationNo">
             </mat-form-field>
         </div>
         <div class="upper-row">
             <mat-form-field appearance="fill">
-                <mat-label>Type</mat-label>
-                <input matInput>
+                <mat-label>State Text</mat-label>
+                <input matInput [(ngModel)]="stateText">
             </mat-form-field>
             <mat-form-field appearance="fill">
-                <mat-label>Zip ID</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Zip Text </mat-label>
-                <input matInput>
+                <mat-label>Street</mat-label>
+                <input matInput [(ngModel)]="street">
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Payment Terms Days </mat-label>
-                <input matInput>
+                <input matInput [(ngModel)]="paymentTermsDays">
+            </mat-form-field>
+        </div>
+        <div class="upper-row">
+            <mat-form-field appearance="fill">
+                <mat-label>Zip Text </mat-label>
+                <input matInput [(ngModel)]="zipcodeText">
             </mat-form-field>
             <mat-form-field appearance="fill">
-                <mat-label>Payment Terms Mode</mat-label>
-                <input matInput>
+                <mat-label>City</mat-label>
+                <input matInput [(ngModel)]="cityText">
             </mat-form-field>
         </div>
         <div class="button-group">
             <button mat-raised-button [disableRipple]="true">Cancel</button>
-            <button mat-raised-button [disableRipple]="true" color="primary">Create</button>
+            <button mat-raised-button [disableRipple]="true" color="primary" (click)="createContact()">Create</button>
         </div>
     </mat-card>
 </div>

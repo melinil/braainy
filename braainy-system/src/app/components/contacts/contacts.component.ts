@@ -12,6 +12,7 @@ import { ContactsService } from 'src/app/services/contacts-fetch.service';
 export class ContactsComponent implements OnInit {
   displayedColumns: string[] = ['accessCode','cityId','cityText','contactNo','countryId','createdTime','currencyId','defaultExpenseAccountId','defaultExpenseProductDescription','defaultTaxRateId','ean','emailAttachmentDeliveryMode','fax','id','isArchived','isCustomer','isSalesTaxExempt','isSupplier','localeId','name','organizationId','phone','registrationNo','stateId','stateText','street','type','zipcodeId','zipcodeText','paymentTermsDays','paymentTermsMode'];
   dataSource;
+  showSpinner = true;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
 
@@ -21,6 +22,7 @@ export class ContactsComponent implements OnInit {
       console.log(res)
       this.dataSource = new MatTableDataSource<any>(res.contacts)
       this.dataSource.paginator = this.paginator;
+      this.showSpinner = false;
     })
   }
 }
