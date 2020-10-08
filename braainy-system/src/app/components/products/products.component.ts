@@ -10,7 +10,8 @@ import { ProductsService } from 'src/app/services/products-fetch.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  displayedColumns: string[] = ['organization', 'name', 'description', 'account', 'prodNo', 'suppProdNo', 'salesTax', 'archived'];
+  displayedColumns: string[] = ['Organization', 'Name', 'Description', 'Account', 'Product No.', 'Supp. Product No.', 'Sales Tax', 'Archived'];
+  selectedColumns: string[] = []
   dataSource;
   productsData: any[] = []
   showSpinner = true;
@@ -22,6 +23,11 @@ export class ProductsComponent implements OnInit {
   constructor(private ProductsService: ProductsService) { }
 
   ngOnInit() {
+    if (JSON.parse(sessionStorage.getItem("selectedProductColumns"))) {
+      this.selectedColumns = JSON.parse(sessionStorage.getItem("selectedProductColumns"))
+    } else {
+      this.selectedColumns = this.displayedColumns
+    }
     this.ProductsService.getProducts().subscribe((res: any) => {
       this.setDataSource(res.products)
       this.dataSource.sort = this.sort;
@@ -38,6 +44,11 @@ export class ProductsComponent implements OnInit {
   setDataSource(data) {
     this.dataSource = new MatTableDataSource<any>(data)
     this.dataSource.paginator = this.paginator;
+  }
+
+  onColumnChange(event) {
+    this.selectedColumns = event.value
+    sessionStorage.setItem("selectedProductColumns", JSON.stringify(this.selectedColumns))
   }
 }
 

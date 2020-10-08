@@ -5,42 +5,50 @@
       <input matInput value="" [value]="searchValue" (change)="onSearch($event)">
     </mat-form-field>
   </form>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Columns</mat-label>
+    <mat-select  multiple (selectionChange)="onColumnChange($event)" [value]="selectedColumns">
+      <mat-option *ngFor="let column of displayedColumns" [value]="column" >{{column}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
   <div class="mat-elevation-z8">
     <table mat-table matSort [dataSource]="dataSource" class="products-table">
-      <ng-container matColumnDef="organization">
+      <ng-container matColumnDef="Organization">
         <th mat-header-cell *matHeaderCellDef> Organization </th>
         <td mat-cell *matCellDef="let product"> {{product.organizationId}} </td>
       </ng-container>
-      <ng-container matColumnDef="name">
+      <ng-container matColumnDef="Name">
         <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
         <td mat-cell *matCellDef="let product"> {{product.name}} </td>
       </ng-container>
-      <ng-container matColumnDef="description">
+      <ng-container matColumnDef="Description">
         <th mat-header-cell *matHeaderCellDef> Description </th>
         <td mat-cell *matCellDef="let product"> {{product.description}} </td>
       </ng-container>
-      <ng-container matColumnDef="account">
+      <ng-container matColumnDef="Account">
         <th mat-header-cell *matHeaderCellDef> Account </th>
         <td mat-cell *matCellDef="let product"> {{product.accountId}} </td>
       </ng-container>
-      <ng-container matColumnDef="prodNo">
+      <ng-container matColumnDef="Product No.">
         <th mat-header-cell *matHeaderCellDef> Product No. </th>
         <td mat-cell *matCellDef="let product"> {{product.productNo}} </td>
       </ng-container>
-      <ng-container matColumnDef="suppProdNo">
+      <ng-container matColumnDef="Supp. Product No.">
         <th mat-header-cell *matHeaderCellDef> Supp. Product No. </th>
         <td mat-cell *matCellDef="let product"> {{product.suppliersProductNo}} </td>
       </ng-container>
-      <ng-container matColumnDef="salesTax">
+      <ng-container matColumnDef="Sales Tax">
         <th mat-header-cell *matHeaderCellDef> Sales Tax </th>
         <td mat-cell *matCellDef="let product"> {{product.salesTaxRulesetId}} </td>
       </ng-container>
-      <ng-container matColumnDef="archived">
+      <ng-container matColumnDef="Archived">
         <th mat-header-cell *matHeaderCellDef> Archived </th>
         <td mat-cell *matCellDef="let product"> {{product.isArchived}} </td>
       </ng-container>
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-header-row *matHeaderRowDef="selectedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: selectedColumns;"></tr>
     </table>
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons class="products-pagination"></mat-paginator>
   </div>
