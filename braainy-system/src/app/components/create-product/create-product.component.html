@@ -1,37 +1,37 @@
 <div class="create-product-container">
     <mat-card>
         <h1 class="product-create-heading">Create New Product</h1>
-            <div class="upper-row">
-                <mat-form-field appearance="fill">
-                    <mat-label>Name (required)</mat-label>
-                    <input matInput [(ngModel)]="productName">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Description</mat-label>
-                    <input matInput  [(ngModel)]="productDescription">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Product No. </mat-label>
-                    <input matInput [(ngModel)]="productNo">
-                </mat-form-field>
-            </div>
-            <div class="lower-row">
-                <mat-form-field appearance="fill">
-                    <mat-label>Supp. Product No.</mat-label>
-                    <input matInput [(ngModel)]="suppProdNp">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Sales Tax</mat-label>
-                    <input matInput [(ngModel)]="prodSalesTax">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Archived</mat-label>
-                    <mat-select [(value)]="selected">
-                        <mat-option value="true">Yes</mat-option>
-                        <mat-option value="false">No</mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
+        <div class="upper-row">
+            <mat-form-field appearance="fill">
+                <mat-label>Name (required)</mat-label>
+                <input matInput [(ngModel)]="productName">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <input matInput [(ngModel)]="productDescription">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Product No. </mat-label>
+                <input matInput [(ngModel)]="productNo">
+            </mat-form-field>
+        </div>
+        <div class="lower-row">
+            <mat-form-field appearance="fill">
+                <mat-label>Supp. Product No.</mat-label>
+                <input matInput [(ngModel)]="suppProdNp">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Sales Tax</mat-label>
+                <input matInput [(ngModel)]="prodSalesTax">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Archived</mat-label>
+                <mat-select [(value)]="selected">
+                    <mat-option value="true">Yes</mat-option>
+                    <mat-option value="false">No</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
         <div class="button-group">
             <button mat-raised-button [disableRipple]="true" routerLink="/product-list"
                 routerLinkActive="active">Cancel</button>

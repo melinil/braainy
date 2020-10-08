@@ -1,3 +1,4 @@
+
 .create-product-container {
     width: 80%;
     margin: auto;
@@ -5,6 +6,7 @@
     text-align: center;
 
     .upper-row {
+
         mat-form-field {
             padding-right: 1rem;
             margin-top: 2rem;
@@ -12,25 +14,29 @@
     }
 
     .lower-row {
+
         mat-form-field {
             padding-right: 1rem;
             margin-bottom: 1rem;
         }
     }
 
-    .product-create-heading{
+    .product-create-heading {
         text-align: left;
         margin-left: 5rem;
         color: #333333;
     }
-    .button-group{
+
+    .button-group {
         text-align: right;
         margin-right: 4rem;
         margin-top: 2rem;
-        button{
+
+        button {
             margin-right: 1rem;
         }
     }
+    
     .loading-spinner {
         width: 90%;
         margin: auto;

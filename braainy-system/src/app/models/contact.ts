@@ -19,7 +19,6 @@ export default interface Contact {
     id?: string;
     type?: string;
     paymentTermsDays?: number;
-    createdTime?: any;
     isArchived?: boolean;
     isCustomer?: boolean;
     isSalesTaxExempt?: boolean;

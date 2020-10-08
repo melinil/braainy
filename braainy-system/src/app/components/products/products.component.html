@@ -8,8 +8,8 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Columns</mat-label>
-    <mat-select  multiple (selectionChange)="onColumnChange($event)" [value]="selectedColumns">
-      <mat-option *ngFor="let column of displayedColumns" [value]="column" >{{column}}</mat-option>
+    <mat-select multiple (selectionChange)="onColumnChange($event)" [value]="selectedColumns">
+      <mat-option *ngFor="let column of displayedColumns" [value]="column">{{column}}</mat-option>
     </mat-select>
   </mat-form-field>
 
@@ -54,5 +54,5 @@
   </div>
   <button mat-raised-button [disableRipple]="true" color="primary" routerLink="/product-create"
     routerLinkActive="active">Create Product</button>
-    <mat-spinner *ngIf="showSpinner" class="loading-spinner"></mat-spinner>
+  <mat-spinner *ngIf="showSpinner" class="loading-spinner"></mat-spinner>
 </div>

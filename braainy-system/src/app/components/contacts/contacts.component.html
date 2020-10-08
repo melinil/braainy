@@ -7,8 +7,8 @@
   </form>
   <mat-form-field appearance="fill">
     <mat-label>Columns</mat-label>
-    <mat-select  multiple (selectionChange)="onColumnChange($event)" [value]="selectedColumns">
-      <mat-option *ngFor="let column of displayedColumns" [value]="column" >{{column}}</mat-option>
+    <mat-select multiple (selectionChange)="onColumnChange($event)" [value]="selectedColumns">
+      <mat-option *ngFor="let column of displayedColumns" [value]="column">{{column}}</mat-option>
     </mat-select>
   </mat-form-field>
   <div class="mat-elevation-z8">
@@ -32,10 +32,6 @@
       <ng-container matColumnDef="Country">
         <th mat-header-cell *matHeaderCellDef> Country </th>
         <td mat-cell *matCellDef="let contact"> {{contact.countryId}} </td>
-      </ng-container>
-      <ng-container matColumnDef="Created Time">
-        <th mat-header-cell *matHeaderCellDef> Created Time </th>
-        <td mat-cell *matCellDef="let contact"> {{contact.createdTime}} </td>
       </ng-container>
       <ng-container matColumnDef="Currency">
         <th mat-header-cell *matHeaderCellDef> Currency </th>
@@ -144,5 +140,5 @@
   </div>
   <button mat-raised-button [disableRipple]="true" color="primary" routerLink="/contact-create"
     routerLinkActive="active">Create Contact</button>
-    <mat-spinner *ngIf="showSpinner" class="loading-spinner"></mat-spinner>
+  <mat-spinner *ngIf="showSpinner" class="loading-spinner"></mat-spinner>
 </div>

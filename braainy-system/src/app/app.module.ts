@@ -20,6 +20,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ContactsComponent,
     ProductsComponent,
     CreateProductComponent,
-    CreateContactComponent
+    CreateContactComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

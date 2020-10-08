@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { Constants } from 'src/app/constants/constants';
 import Product from 'src/app/models/product';
 import { ProductsService } from 'src/app/services/products-fetch.service';
 
@@ -7,8 +8,8 @@ import { ProductsService } from 'src/app/services/products-fetch.service';
   templateUrl: './create-product.component.html',
   styleUrls: ['./create-product.component.scss']
 })
-export class CreateProductComponent implements OnInit {
-  // TODO Update var names
+export class CreateProductComponent {
+
   productName: string;
   productDescription: string;
   productNo: string;
@@ -17,32 +18,29 @@ export class CreateProductComponent implements OnInit {
   selected: boolean;
   newProduct: Product = {};
   showSpinner: boolean = false;
-  //BELONGS TO
-  organizationId: string = "cwNMzNn1TOWhrYwyb6jdfA";
-  accountId: string = "sqEDsBlzSciIfOYh4t1QZQ";
+  organizationId: string = Constants.organizationId;
+  accountId: string = Constants.accountId;
 
   constructor(private productsService: ProductsService) { }
 
-  ngOnInit(): void { }
-
   createProduct() {
     this.showSpinner = true;
-    this.updateObject()
-    this.productsService.createProduct(this.newProduct).subscribe(res => this.showSpinner = false)
+    this.updateObject();
+    this.productsService.createProduct(this.newProduct).subscribe(res => this.showSpinner = false);
   }
 
   updateObject() {
     if (this.organizationId && this.productName && this.accountId) {
-      this.newProduct.organizationId = this.organizationId
-      this.newProduct.name = this.productName
-      this.newProduct.description = this.productDescription
-      this.newProduct.accountId = this.accountId
-      this.newProduct.productNo = this.productNo
-      this.newProduct.suppliersProductNo = this.suppProdNp
-      this.newProduct.salesTaxRulesetId = this.prodSalesTax
-      this.newProduct.isArchived = this.selected
+      this.newProduct.organizationId = this.organizationId;
+      this.newProduct.name = this.productName;
+      this.newProduct.description = this.productDescription;
+      this.newProduct.accountId = this.accountId;
+      this.newProduct.productNo = this.productNo;
+      this.newProduct.suppliersProductNo = this.suppProdNp;
+      this.newProduct.salesTaxRulesetId = this.prodSalesTax;
+      this.newProduct.isArchived = this.selected;
     } else {
-      console.log("Please fill in all required fields")
+      console.log('Please fill in all required fields');
     }
   }
 }
