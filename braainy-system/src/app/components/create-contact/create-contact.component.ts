@@ -24,6 +24,7 @@ export class CreateContactComponent implements OnInit {
   isCustomer: boolean
   isSalesTaxExempt: boolean
   isSupplier: boolean
+  showSpinner: boolean = false;
   paymentTermsDays: number
   newContact: Contact = {};
 
@@ -44,8 +45,9 @@ export class CreateContactComponent implements OnInit {
   }
 
   createContact() {
+    this.showSpinner = true
     this.updateContact()
-    this.contactsService.createContact(this.newContact).subscribe(res => console.log(res))
+    this.contactsService.createContact(this.newContact).subscribe(res => this.showSpinner = false)
   }
 
   updateContact() {

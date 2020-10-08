@@ -2,7 +2,7 @@
   <form class="contacts-search-form">
     <mat-form-field>
       <mat-label>Search Contact</mat-label>
-      <input matInput value="">
+      <input matInput value="" [value]="searchValue" (change)="onSearch($event)">
     </mat-form-field>
   </form>
   <div class="mat-elevation-z8">

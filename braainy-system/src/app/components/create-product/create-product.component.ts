@@ -18,8 +18,8 @@ export class CreateProductComponent implements OnInit {
   newProduct: Product = {};
   showSpinner: boolean = false;
   //BELONGS TO
-  organizationId: string;
-  accountId: string;
+  organizationId: string = "cwNMzNn1TOWhrYwyb6jdfA";
+  accountId: string = "sqEDsBlzSciIfOYh4t1QZQ";
 
   constructor(private productsService: ProductsService) { }
 
@@ -28,16 +28,15 @@ export class CreateProductComponent implements OnInit {
   createProduct() {
     this.showSpinner = true;
     this.updateObject()
-    this.productsService.createProduct(this.newProduct).subscribe(res => console.log(res))
-    this.showSpinner = false;
+    this.productsService.createProduct(this.newProduct).subscribe(res => this.showSpinner = false)
   }
 
   updateObject() {
     if (this.organizationId && this.productName && this.accountId) {
-      this.newProduct.organizationId = "cwNMzNn1TOWhrYwyb6jdfA"
+      this.newProduct.organizationId = this.organizationId
       this.newProduct.name = this.productName
       this.newProduct.description = this.productDescription
-      this.newProduct.accountId = "sqEDsBlzSciIfOYh4t1QZQ"
+      this.newProduct.accountId = this.accountId
       this.newProduct.productNo = this.productNo
       this.newProduct.suppliersProductNo = this.suppProdNp
       this.newProduct.salesTaxRulesetId = this.prodSalesTax
