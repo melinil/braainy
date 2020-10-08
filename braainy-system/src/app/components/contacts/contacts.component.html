@@ -141,4 +141,5 @@
   <button mat-raised-button [disableRipple]="true" color="primary" routerLink="/contact-create"
     routerLinkActive="active">Create Contact</button>
   <mat-spinner *ngIf="showSpinner" class="loading-spinner"></mat-spinner>
+  <span class="error-message">{{alertMessage}}</span>
 </div>

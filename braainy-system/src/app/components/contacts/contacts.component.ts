@@ -14,8 +14,9 @@ export class ContactsComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   displayedColumns: string[] = ['Access Code', 'City ID', 'City', 'Contact No.', 'Country', 'Currency', 'Expense Acc. ID', 'Expense Prod. Desc.', 'Tax Rate ID', 'EAN', 'Email Attachment Delivery Mode', 'Fax', 'ID', 'Archived', 'Customer', 'Tax Exempt', 'Supplier', 'Locale ID', 'Name', 'Org ID', 'Phone', 'Reg. No.', 'State ID', 'State Text', 'Street', 'Type', 'Zip ID', 'Zip Text', 'Payment Terms Days', 'Payment Terms Mode'];
   selectedColumns: string[] = [];
-  showSpinner: boolean = true;
   searchValue: string = "";
+  alertMessage: string = "";
+  showSpinner: boolean = true;
   dataSource: any;
   contactData: any[] = [];
 
@@ -33,6 +34,9 @@ export class ContactsComponent implements OnInit {
       this.setDataSource(res.contacts);
       this.showSpinner = false;
       this.contactData = res.contacts;
+    }, (err) => {
+      this.alertMessage = err.error + ' Please contact system administrator.';
+      this.showSpinner = false;
     })
   }
 

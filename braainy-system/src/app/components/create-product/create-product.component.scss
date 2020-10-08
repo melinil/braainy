@@ -41,4 +41,18 @@
         width: 90%;
         margin: auto;
     }
+
+    .error-message {
+        color: red;
+        margin-right: 2rem;
+        margin-top: 2rem;
+        display: block;
+    }
+
+    .success-message {
+        color: green;
+        margin-right: 2rem;
+        margin-top: 2rem;
+        display: block;
+    }
 }

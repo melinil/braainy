@@ -10,16 +10,16 @@ import { ProductsService } from 'src/app/services/products-fetch.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  
+
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   displayedColumns: string[] = ['Organization', 'Name', 'Description', 'Account', 'Product No.', 'Supp. Product No.', 'Sales Tax', 'Archived'];
   selectedColumns: string[] = [];
-  showSpinner: boolean = true;
   searchValue: string = '';
+  alertMessage: string = '';
+  showSpinner: boolean = true;
   dataSource: any;
   productsData: any[] = [];
-
 
   constructor(private ProductsService: ProductsService) { }
 
@@ -35,6 +35,9 @@ export class ProductsComponent implements OnInit {
       this.dataSource.sort = this.sort;
       this.showSpinner = false;
       this.productsData = res.products;
+    }, (err) => {
+      this.alertMessage = err.error + ' Please contact system administrator.';
+      this.showSpinner = false;
     })
   }
 

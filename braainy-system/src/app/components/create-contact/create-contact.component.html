@@ -100,6 +100,7 @@
             <button mat-raised-button [disableRipple]="true">Cancel</button>
             <button mat-raised-button [disableRipple]="true" color="primary" (click)="createContact()">Create</button>
         </div>
+        <span class="{{alertClass}}">{{alertMessage}}</span>
         <mat-spinner *ngIf="showSpinner" class="loading-spinner"></mat-spinner>
     </mat-card>
 </div>

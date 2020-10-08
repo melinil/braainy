@@ -15,6 +15,8 @@ export class CreateProductComponent {
   productNo: string;
   suppProdNp: string;
   prodSalesTax: string;
+  alertMessage: string = '';
+  alertClass: string;
   selected: boolean;
   newProduct: Product = {};
   showSpinner: boolean = false;
@@ -24,23 +26,33 @@ export class CreateProductComponent {
   constructor(private productsService: ProductsService) { }
 
   createProduct() {
-    this.showSpinner = true;
-    this.updateObject();
-    this.productsService.createProduct(this.newProduct).subscribe(res => this.showSpinner = false);
+    if (this.organizationId && this.productName && this.accountId) {
+      this.showSpinner = true;
+      this.updateObject();
+    } else {
+      this.alertClass = 'error-message';
+      this.alertMessage = 'Please fill in all rquired fields!';
+      return;
+    }
+    this.productsService.createProduct(this.newProduct).subscribe((res) => {
+      this.showSpinner = false;
+      this.alertClass = 'success-message';
+      this.alertMessage = 'Successfully created record!';
+    }, (err) => {
+      this.alertClass = 'error-message';
+      this.alertMessage = err.error + ' Please contact system administrator.';
+      this.showSpinner = false;
+    });
   }
 
   updateObject() {
-    if (this.organizationId && this.productName && this.accountId) {
-      this.newProduct.organizationId = this.organizationId;
-      this.newProduct.name = this.productName;
-      this.newProduct.description = this.productDescription;
-      this.newProduct.accountId = this.accountId;
-      this.newProduct.productNo = this.productNo;
-      this.newProduct.suppliersProductNo = this.suppProdNp;
-      this.newProduct.salesTaxRulesetId = this.prodSalesTax;
-      this.newProduct.isArchived = this.selected;
-    } else {
-      console.log('Please fill in all required fields');
-    }
+    this.newProduct.organizationId = this.organizationId;
+    this.newProduct.name = this.productName;
+    this.newProduct.description = this.productDescription;
+    this.newProduct.accountId = this.accountId;
+    this.newProduct.productNo = this.productNo;
+    this.newProduct.suppliersProductNo = this.suppProdNp;
+    this.newProduct.salesTaxRulesetId = this.prodSalesTax;
+    this.newProduct.isArchived = this.selected;
   }
 }
