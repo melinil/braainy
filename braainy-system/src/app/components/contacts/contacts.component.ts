@@ -10,7 +10,6 @@ import { ContactsService } from 'src/app/services/contacts-fetch.service';
   styleUrls: ['./contacts.component.scss']
 })
 export class ContactsComponent implements OnInit {
-  // ELEMENT_DATA: any[]
   displayedColumns: string[] = ['accessCode','cityId','cityText','contactNo','countryId','createdTime','currencyId','defaultExpenseAccountId','defaultExpenseProductDescription','defaultTaxRateId','ean','emailAttachmentDeliveryMode','fax','id','isArchived','isCustomer','isSalesTaxExempt','isSupplier','localeId','name','organizationId','phone','registrationNo','stateId','stateText','street','type','zipcodeId','zipcodeText','paymentTermsDays','paymentTermsMode'];
   dataSource;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;

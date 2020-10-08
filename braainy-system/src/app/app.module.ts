@@ -18,6 +18,7 @@ import { CreateProductComponent } from './components/create-product/create-produ
 import { CreateContactComponent } from './components/create-contact/create-contact.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import {MatCardModule} from '@angular/material/card';
     MatInputModule,
     HttpClientModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
